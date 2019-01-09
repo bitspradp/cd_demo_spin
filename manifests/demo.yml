@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: primary
-        image: index.docker.io/bitspradp/spnkr_crci_test
+        image: index.docker.io/bitspradp/cd_spin_demo
         ports:
         - containerPort: 8000
         readinessProbe:

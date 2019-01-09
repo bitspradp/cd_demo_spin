@@ -1,6 +1,6 @@
 from flask import Flask
 import socket
-import version
+from version import *
 
 app = Flask(__name__)
 
@@ -11,7 +11,7 @@ def index():
         host_ip = socket.gethostbyname(host_name)
         return "HOST_NAME: "+host_name+" IP_ADDRESS: "+host_ip+"DEPLOYMENT_VERSION: "+version+"\n"
     except:
-        return "Error"
+        return "Unable to serve requests presently\n"
 
 
 if __name__ == "__main__":

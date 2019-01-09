@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask
 import socket
 
 app = Flask(__name__)
@@ -8,9 +8,9 @@ def index():
     try:
         host_name = socket.gethostname()
         host_ip = socket.gethostbyname(host_name)
-        return render_template('index.html', hostname=host_name, ip=host_ip)
+        return "HOST_NAME: "+host_name+" IP_ADDRESS: "+host_ip+"DEPLOYMENT_VERSION: 1.0\n"
     except:
-        return render_template('error.html')
+        return "Error"
 
 
 if __name__ == "__main__":

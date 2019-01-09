@@ -16,7 +16,7 @@ jobs:
 
      - run:
          name: Build image
-         command: docker build -t $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME:dev .
+         command: docker build -t $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
      - run:
          name: Save image
          command: mkdir tar && docker save -o tar/$CIRCLE_PROJECT_REPONAME.tar $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME

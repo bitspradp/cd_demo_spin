@@ -20,3 +20,21 @@ steps:
     # You can push the image with whatever tag you want. In our example we use CF_BRANCH, which is a variable in
     # the build process, accessible throughout the entire flow.
     tag: '${{CF_BRANCH}}'
+  DeployToCluster:
+    title: deploying to k8s cluster
+    type: deploy
+    stage: deploy
+    kind: kubernetes
+    cluster: pro-cluster
+    namespace: default
+    service: my-demo-servc
+    candidate:
+      image: index.docker.io/bitspradp/cd_demo_spin:master
+      # The registry that the user's Kubernetes cluster can pull the image from
+      # Codefresh will generate (if not found) secret and add it to the deployment so the Kubernetes master can pull it
+      registry: dockerhub
+    when:
+      branch:
+        only:
+        - master
+

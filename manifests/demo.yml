@@ -15,8 +15,6 @@ spec:
 ---
 kind: Service
 apiVersion: v1
-metadata:
-  app: spinn
 spec:
   ports:
   - protocol: TCP

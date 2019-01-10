@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: spinnaker-demo
+  namespace: default
+  labels:
+    source: demo
+    stack: frontend
+    app: spinnaker
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      source: demo
+      app: spinnaker
+  template:
+    metadata:
+      labels:
+        source: demo
+        app: spinnaker
+    spec:
+      containers:
+      - name: my-service-push
+        image: index.docker.io/bitspradp/cd_demo_spin:master
+        ports:
+        - containerPort: 8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-demo-servc
+  namespace: default
+spec:
+  selector:
+    source: demo
+    app: spinnaker
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: LoadBalancer

@@ -7,8 +7,6 @@ metadata:
     source: demo
     stack: frontend
     app: spinnaker
-data:
-  NEW_FEATURE: "true"
 spec:
   replicas: 3
   selector:

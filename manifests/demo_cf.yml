@@ -24,8 +24,6 @@ spec:
         image: index.docker.io/bitspradp/cd_demo_spin:master
         ports:
         - containerPort: 8080
-strategy:
-  type: Recreate
 ---
 kind: Service
 apiVersion: v1

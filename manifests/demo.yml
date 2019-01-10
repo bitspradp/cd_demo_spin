@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: spinnaker-demo
-  namespace: spinnaker
+  namespace: default
   labels:
     source: demo
     stack: frontend
@@ -29,7 +29,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: my-demo-servc
-  namespace: spinnaker
+  namespace: default
 spec:
   ports:
   - protocol: TCP

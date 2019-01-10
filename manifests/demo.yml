@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: spinnaker-demo-config
-  namespace: default
+  namespace: spin-demo-new
 data:
   NEW_FEATURE: "true"
 
@@ -12,7 +12,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: spinnaker-demo
-  namespace: default
+  namespace: spin-demo-new
   labels:
     run: sample-app
 spec:

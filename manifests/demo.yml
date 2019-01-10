@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: my-service-push
-        image: index.docker.io/bitspradp/cd_demo_spin
+        image: index.docker.io/bitspradp/cd_demo_spin:master
         ports:
         - containerPort: 8080
 ---

@@ -17,6 +17,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: my-demo-servc
+  namespace: spin-demo-new
 spec:
   ports:
   - protocol: TCP

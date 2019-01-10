@@ -1,13 +1,3 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: spinnaker-demo-config
-  namespace: spin-demo-new
-data:
-  NEW_FEATURE: "true"
-
----
-
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -30,10 +20,6 @@ spec:
         image: index.docker.io/bitspradp/cd_demo_spin
         ports:
         - containerPort: 8080
-        envFrom:
-        - configMapRef:
-            name: spinnaker-demo-config
-
 ---
 kind: Service
 apiVersion: v1

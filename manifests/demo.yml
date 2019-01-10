@@ -4,16 +4,16 @@ metadata:
   name: spinnaker-demo
   namespace: spin-demo-new
   labels:
-    run: sample-app
+    app: spinn
 spec:
   replicas: 3
   selector:
     matchLabels:
-      run: sample-app
+      app: spinn
   template:
     metadata:
       labels:
-        run: sample-app
+        app: spinn
     spec:
       containers:
       - name: my-service-push
@@ -24,10 +24,10 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  run: sample-app
+  app: spinn
 spec:
   selector:
-    run: sample-app
+    app: spinn
   ports:
   - protocol: TCP
     port: 8080

@@ -3,9 +3,21 @@ kind: Deployment
 metadata:
   name: spinnaker-demo
   namespace: spinnaker
+  labels:
+    source: demo
+    stack: frontend
+    app: spinnaker
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+      source: demo
+      app: spinnaker
   template:
+    metadata:
+      labels:
+        source: demo
+        app: spinnaker
     spec:
       containers:
       - name: my-service-push

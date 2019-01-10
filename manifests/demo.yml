@@ -31,6 +31,9 @@ metadata:
   name: my-demo-servc
   namespace: default
 spec:
+  selector:
+    source: demo
+    app: spinnaker
   ports:
   - protocol: TCP
     port: 8080

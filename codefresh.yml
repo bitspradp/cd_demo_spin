@@ -10,6 +10,12 @@ steps:
     tag: '${{CF_SHORT_REVISION}}'
     #Dockerfile location should be relative to the working directory
     dockerfile: Dockerfile
+    commands: 
+      - echo $CF_BUILD_ID
+      - echo $CF_BRANCH_TAG_NORMALIZED
+      - echo $CF_SHORT_REVISION
+      - echo $CF_BUILD_URL
+      - echo $CF_REVISION
 
   push_to_registry:
     title: Pushing to Docker Registry

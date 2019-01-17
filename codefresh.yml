@@ -5,7 +5,7 @@ steps:
   build_image:
     title: Building Image
     type: build
-    #Important: rename this image to to a valid repository in your registry. For example: myUserName/vote
+    #Important: rename this image to to a valid repository in your registry. 
     image_name: bitspradp/cd_demo_spin
     tag: ${{CF_SHORT_REVISION}}
     #Dockerfile location should be relative to the working directory

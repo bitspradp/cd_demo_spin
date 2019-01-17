@@ -1,7 +1,5 @@
 version: '1.0'
-
 steps:
-
   build_image:
     title: Building Image
     type: build
@@ -29,3 +27,14 @@ steps:
 
     # You can push the image with whatever tag you want. In our example we use CF_BRANCH, which is a variable in
     # the build process, accessible throughout the entire flow
+  RunningDeployScript:
+    title: Running Deploy Script
+    type: deploy
+    kind: kubernetes
+    cluster: pro-cluster@SaaS Cloud Prototype
+    namespace: default
+    when:
+      branch:
+        only:
+          - master
+    file_path: ./manifests/demo_cf.yml
